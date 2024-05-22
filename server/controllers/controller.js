@@ -58,7 +58,10 @@ class Controller {
             }
 
             let token = signToken({ id: user.id })
-            res.status(200).json({ access_token: token })
+            res.status(200).json({ 
+                access_token: token,  
+                email: user.email
+            })
         } catch (error) {
             console.log(error)
             next(error)
